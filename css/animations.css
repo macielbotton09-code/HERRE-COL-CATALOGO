@@ -1,0 +1,72 @@
+/* HERRE-COL — Keyframes and motion utility classes. Transform/opacity only (no layout thrash). */
+
+@keyframes hc-pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  70%  { transform: scale(1.6); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes hc-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hc-fade-up-slow {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hc-slide-in-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes hc-pill-in {
+  0%   { opacity: 0; transform: translateY(-20px) scale(0.92); }
+  60%  { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes hc-nav-in {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hc-sheen {
+  0%   { background-position: -140% 0; }
+  60%, 100% { background-position: 240% 0; }
+}
+
+@keyframes hc-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+.hc-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.hc-reveal.is-in { opacity: 1; transform: translateY(0); }
+
+.hc-hero-line {
+  display: inline-block;
+  animation: hc-slide-in-left 0.9s var(--ease-out) both;
+}
+.hc-hero-rise { animation: hc-fade-up-slow 0.85s var(--ease-out) both; }
+.hc-pill-in { animation: hc-pill-in 0.55s var(--ease-out) both; }
+.hc-fade-up { animation: hc-fade-up 0.65s var(--ease-out) both; }
+.hc-nav-in { animation: hc-nav-in 0.5s var(--ease-out) both; }
+.hc-bob { animation: hc-bob 2s ease-in-out infinite; }
+
+.hc-sheen-bar {
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--orange-500), var(--color-primary));
+  background-size: 200% 100%;
+  animation: hc-sheen 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hc-reveal { opacity: 1; transform: none; transition: none; }
+  .hc-hero-line, .hc-hero-rise, .hc-pill-in, .hc-fade-up, .hc-nav-in, .hc-bob { animation: none; }
+}

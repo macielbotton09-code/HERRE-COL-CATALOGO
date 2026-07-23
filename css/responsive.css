@@ -1,0 +1,38 @@
+/* HERRE-COL — Mobile-first breakpoints. Base rules in components.css target small screens. */
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  .hc-catgrid { grid-template-columns: repeat(3, 1fr); }
+  .hc-designgrid { grid-template-columns: repeat(2, 1fr); }
+  .hc-footgrid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Desktop */
+@media (min-width: 940px) {
+  .hc-catgrid { grid-template-columns: repeat(3, 1fr); }
+  .hc-designgrid { grid-template-columns: repeat(3, 1fr); }
+  .hc-footgrid { grid-template-columns: 1.6fr 1fr 1fr; }
+  .hc-steps { grid-template-columns: repeat(3, 1fr); }
+  .hc-contact-grid { grid-template-columns: 1fr 1.05fr; }
+  .hc-cathero-content { padding-top: 120px; }
+}
+
+@media (max-width: 939px) {
+  .hc-navlinks {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 2px;
+  }
+  .hc-navlink { padding: 8px 4px; font-size: 11px; gap: 4px; flex: 1 1 0; min-width: 0; justify-content: center; }
+  .hc-navlink .hc-navicon { width: 15px; height: 15px; flex-shrink: 0; }
+  .hc-navlabel { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .hc-wa-label { display: none; }
+  .hc-catsticky { top: 100px; }
+}
+
+@media (max-width: 480px) {
+  .hc-designgrid { grid-template-columns: 1fr; }
+  .hc-catgrid { grid-template-columns: 1fr 1fr; }
+}
