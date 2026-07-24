@@ -19,7 +19,7 @@ export function renderDesignCard(design) {
   return `
     <article class="hc-card hc-reveal">
       <div class="hc-card-accent" aria-hidden="true"></div>
-      <div class="hc-card-media">
+      <div class="hc-card-media${design.cardBg === 'dark' ? ' hc-card-media--dark' : ''}">
         ${imageWithFallback({
           src: design.img,
           alt: `${design.name} — ${categoryName}`,
