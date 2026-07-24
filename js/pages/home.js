@@ -1,59 +1,123 @@
-import { icon } from '../icons.js';
+import { CATEGORIES, DESIGNS, categoryCover } from '../data.js';
+import { waLink } from '../wa.js';
+import { icon, whatsappGlyph } from '../icons.js';
 import { imageWithFallback } from '../placeholder.js';
+import { renderDesignCard } from '../components/design-card.js';
 import { renderCtaBand } from '../components/cta-band.js';
 
-const PROCESS = [
-  { iconName: 'pencil-ruler', title: 'Diseño', desc: 'Cada pieza se modela antes de cortar el primer perfil.' },
-  { iconName: 'flame', title: 'Fabricación', desc: 'Soldadura especializada y acabado electrostático.' },
-  { iconName: 'shield-check', title: 'Instalación', desc: 'Montaje propio y respaldo por escrito.' },
+const FEATURED_REFS = ['PT-105', 'PO-104', 'ES-102'];
+
+const PROCESS_STEPS = [
+  { n: '01', iconName: 'mouse-pointer-click', title: 'Elige', desc: 'Recorre el catálogo y guarda la referencia que te gusta.' },
+  { n: '02', iconName: 'message-circle', title: 'Cotiza', desc: 'Un clic abre WhatsApp con tu diseño ya escrito.' },
+  { n: '03', iconName: 'ruler', title: 'Recibe', desc: 'Medimos, fabricamos e instalamos a la medida.' },
 ];
 
-export function renderNosotrosPage() {
+function renderHero() {
+  const quoteHref = waLink({});
+  const designCount = Math.floor(DESIGNS.length / 10) * 10;
+  const stats = [
+    { num: `${designCount}+`, label: 'Diseños en catálogo' },
+    { num: '500+', label: 'Trabajos realizados en obra' },
+    { num: '100%', label: 'Fabricado a la medida' },
+  ];
+
   return `
-    <section class="hc-cathero">
+    <section class="hc-hero">
       ${imageWithFallback({
-        src: 'assets/cat/portones/portones-1.jpg',
-        alt: '',
-        imgClass: 'hc-cathero-media',
+        src: 'assets/img/hero/hero-soldador-atardecer.jpg',
+        alt: 'Soldador fabricando herrería a la medida',
+        imgClass: 'hc-hero-media',
         wrapClass: 'hc-hero-media-wrap',
       })}
-      <div class="hc-cathero-scrim" aria-hidden="true"></div>
-      <div class="hc-cathero-content">
-        <span class="hc-eyebrow hc-eyebrow--inverse">Nosotros</span>
-        <h1 style="max-width:720px;font-weight:900;font-size:clamp(2.2rem, 4.5vw, 3.4rem);letter-spacing:-0.03em;line-height:1.02;color:#fff">
-          Soluciones metálicas para hogares, empresas e industrias.
+      <div class="hc-hero-scrim" aria-hidden="true"></div>
+      <div class="hc-hero-content">
+        <h1 class="hc-hero-title">
+          <span class="hc-hero-line" style="animation-delay:.1s">El aliado</span>
+          <span class="hc-hero-line" style="animation-delay:.3s;color:var(--orange-500)">que tu obra</span>
+          <span class="hc-hero-line" style="animation-delay:.5s;color:var(--blue-700)">necesita</span>
         </h1>
+        <p class="hc-hero-lede hc-hero-rise" style="animation-delay:.75s">Tu mejor aliado en soluciones metálicas.</p>
+        <div class="hc-hero-actions hc-hero-rise" style="animation-delay:.9s">
+          <a class="hc-btn hc-btn--whatsapp hc-btn--lg" href="${quoteHref}" target="_blank" rel="noopener">
+            ${whatsappGlyph(21, '#fff')} Cotizar por WhatsApp
+          </a>
+          <a class="hc-btn hc-btn--outline hc-btn--lg" href="#/catalogo/puertas">
+            Ver catálogo ${icon('arrow-right', 18)}
+          </a>
+        </div>
+        <div class="hc-hero-stats hc-hero-rise" style="animation-delay:1.05s">
+          ${stats.map((s) => `
+            <div class="hc-hero-stat">
+              <span class="hc-hero-stat-num">${s.num}</span>
+              <span class="hc-hero-stat-label">${s.label}</span>
+            </div>
+          `).join('')}
+        </div>
       </div>
     </section>
+  `;
+}
 
-    <section class="hc-section" style="padding-bottom:0">
-      <div style="max-width:920px;margin:0 auto;background:linear-gradient(160deg, #050F2B 0%, #081A47 60%, #10162E 100%);border-radius:var(--radius-xl);padding:clamp(32px, 5vw, 60px);color:#fff;box-shadow:0 24px 60px rgba(5,15,43,0.28)">
-        <span class="hc-eyebrow" style="color:var(--orange-400)">Nuestra historia</span>
-        <h2 style="margin:0 0 22px;font-weight:900;font-size:clamp(1.8rem, 3.4vw, 2.6rem);letter-spacing:-0.025em;line-height:1.08;color:#fff">
-          Detrás de HERRE-COL está <span style="color:var(--orange-400)">Hugo</span>.
-        </h2>
-        <p style="margin:0 0 20px;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem, 1.5vw, 1.28rem);line-height:1.7;color:rgba(255,255,255,0.9)">
-          A sus <strong style="color:#fff;font-weight:800">24 años</strong>, Hugo lleva <strong style="color:#fff;font-weight:800">una década</strong> conociendo a fondo el oficio de la metalúrgica. Hace <strong style="color:#fff;font-weight:800">6 años</strong> decidió independizar toda esa experiencia: empezó con trabajos por su cuenta y hoy dirige su propio taller, un negocio que no para de crecer.
-        </p>
-        <p style="margin:0 0 30px;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem, 1.5vw, 1.28rem);line-height:1.7;color:rgba(255,255,255,0.9)">
-          Somos <strong style="color:var(--orange-400);font-weight:800">expertos</strong> y contamos con un <strong style="color:var(--orange-400);font-weight:800">equipo que trabaja arduamente todos los días</strong> para que cada puerta, ventana o portón salga impecable y a la medida.
-        </p>
-        <a href="#/contacto" style="display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.08);border:1px solid rgba(148,174,228,0.4);border-radius:var(--radius-lg);padding:18px 22px;text-decoration:none;max-width:560px">
-          <span style="flex-shrink:0;width:48px;height:48px;border-radius:var(--radius-md);background:var(--orange-500);color:#fff;display:inline-flex;align-items:center;justify-content:center">${icon('map-pin', 24)}</span>
-          <span style="display:flex;flex-direction:column;gap:3px">
-            <span style="font-family:var(--font-display);font-weight:700;font-size:var(--text-xs);letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--blue-300)">Nuestro taller</span>
-            <span style="font-family:var(--font-display);font-weight:800;font-size:clamp(1.1rem, 1.8vw, 1.4rem);color:#fff;line-height:1.25">Calle 4 #6-59, Segundo Piso — Barrio Callejón, Centro</span>
-          </span>
-        </a>
+function renderCategoryGrid() {
+  const tiles = CATEGORIES.map((c) => `
+    <a href="#/catalogo/${c.slug}" class="hc-cattile">
+      ${imageWithFallback({
+        src: categoryCover(c.slug),
+        alt: c.name,
+        label: c.name,
+        imgClass: 'hc-cattile-img',
+      })}
+      <span class="hc-cattile-scrim" aria-hidden="true"></span>
+      <span class="hc-cattile-body">
+        <span class="hc-cattile-icon">${icon(c.icon, 22)}</span>
+        <span class="hc-cattile-name">${c.name}</span>
+        <span class="hc-cattile-cta">Ver diseños ${icon('arrow-up-right', 15)}</span>
+      </span>
+    </a>
+  `).join('');
+
+  return `
+    <section class="hc-section" style="background:linear-gradient(160deg, var(--blue-950) 0%, var(--blue-900) 55%, #10162e 100%)">
+      <div class="hc-container">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:44px;flex-wrap:wrap">
+          <div>
+            <span class="hc-eyebrow" style="color:#fff">Catálogo</span>
+            <h2 style="font-weight:800;font-size:var(--text-2xl);letter-spacing:-0.02em;color:#fff">Elige una línea. Nosotros la fabricamos.</h2>
+          </div>
+        </div>
+        <div class="hc-catgrid">${tiles}</div>
       </div>
     </section>
+  `;
+}
 
-    <section class="hc-section">
+function renderFeatured() {
+  const featured = FEATURED_REFS.map((ref) => DESIGNS.find((d) => d.ref === ref)).filter(Boolean);
+  return `
+    <section class="hc-section" style="background:linear-gradient(160deg, var(--blue-950) 0%, var(--blue-900) 55%, #10162e 100%)">
+      <div class="hc-container">
+        <div style="text-align:center;max-width:560px;margin:0 auto 44px">
+          <span class="hc-eyebrow" style="justify-content:center;color:var(--orange-400)">Selección</span>
+          <h2 style="font-weight:800;font-size:var(--text-2xl);letter-spacing:-0.02em;color:#fff">Diseños que ya viven en obra</h2>
+        </div>
+        <div class="hc-designgrid">${featured.map(renderDesignCard).join('')}</div>
+      </div>
+    </section>
+  `;
+}
+
+function renderProcess() {
+  return `
+    <section class="hc-section" style="background:var(--orange-50)">
       <div class="hc-container">
         <div class="hc-steps">
-          ${PROCESS.map((s) => `
+          ${PROCESS_STEPS.map((s) => `
             <div class="hc-step">
-              <span class="hc-step-icon" style="background:var(--blue-50);color:var(--color-primary)">${icon(s.iconName, 26)}</span>
+              <div style="display:flex;align-items:center;gap:14px">
+                <span class="hc-step-num">${s.n}</span>
+                <span class="hc-step-icon">${icon(s.iconName, 22)}</span>
+              </div>
               <h3 class="hc-step-title">${s.title}</h3>
               <p class="hc-step-desc">${s.desc}</p>
             </div>
@@ -61,6 +125,9 @@ export function renderNosotrosPage() {
         </div>
       </div>
     </section>
-    ${renderCtaBand()}
   `;
+}
+
+export function renderHomePage() {
+  return renderHero() + renderCategoryGrid() + renderFeatured() + renderProcess() + renderCtaBand();
 }
