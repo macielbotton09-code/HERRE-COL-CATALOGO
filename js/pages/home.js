@@ -15,12 +15,6 @@ const PROCESS_STEPS = [
 
 function renderHero() {
   const quoteHref = waLink({});
-  const designCount = Math.floor(DESIGNS.length / 10) * 10;
-  const stats = [
-    { num: `${designCount}+`, label: 'Diseños en catálogo' },
-    { num: '500+', label: 'Trabajos realizados en obra' },
-    { num: '100%', label: 'Fabricado a la medida' },
-  ];
 
   return `
     <section class="hc-hero">
@@ -45,14 +39,6 @@ function renderHero() {
           <a class="hc-btn hc-btn--outline hc-btn--lg" href="#/catalogo/puertas">
             Ver catálogo ${icon('arrow-right', 18)}
           </a>
-        </div>
-        <div class="hc-hero-stats hc-hero-rise" style="animation-delay:1.05s">
-          ${stats.map((s) => `
-            <div class="hc-hero-stat">
-              <span class="hc-hero-stat-num">${s.num}</span>
-              <span class="hc-hero-stat-label">${s.label}</span>
-            </div>
-          `).join('')}
         </div>
       </div>
     </section>
@@ -80,11 +66,8 @@ function renderCategoryGrid() {
   return `
     <section class="hc-section" style="background:linear-gradient(160deg, var(--blue-950) 0%, var(--blue-900) 55%, #10162e 100%)">
       <div class="hc-container">
-        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:44px;flex-wrap:wrap">
-          <div>
-            <span class="hc-eyebrow" style="color:#fff">Catálogo</span>
-            <h2 style="font-weight:800;font-size:var(--text-2xl);letter-spacing:-0.02em;color:#fff">Elige una línea. Nosotros la fabricamos.</h2>
-          </div>
+        <div style="margin-bottom:28px">
+          <span class="hc-eyebrow" style="color:#fff">Catálogo</span>
         </div>
         <div class="hc-catgrid">${tiles}</div>
       </div>
