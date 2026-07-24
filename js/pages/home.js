@@ -5,7 +5,7 @@ import { imageWithFallback } from '../placeholder.js';
 import { renderDesignCard } from '../components/design-card.js';
 import { renderCtaBand } from '../components/cta-band.js';
 
-const FEATURED_REFS = ['PT-105', 'PO-103', 'ES-102'];
+const FEATURED_REFS = ['PT-105', 'PO-104', 'ES-102'];
 
 const PROCESS_STEPS = [
   { n: '01', iconName: 'mouse-pointer-click', title: 'Elige', desc: 'Recorre el catálogo y guarda la referencia que te gusta.' },
