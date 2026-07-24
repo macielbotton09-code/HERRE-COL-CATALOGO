@@ -26,11 +26,10 @@ export const DESIGNS = [
   // Puertas
   { ref: 'PT-197', name: 'PT-197', cat: 'puertas', desc: '', img: 'assets/cat/puertas/puertas-94.jpg' },
   { ref: 'PT-198', name: 'PT-198', cat: 'puertas', desc: '', img: 'assets/cat/puertas/puertas-95.jpg' },
+  { ref: 'PT-202', name: 'PT-202', cat: 'puertas', desc: '', img: 'assets/cat/puertas/puertas-99.jpg' },
   { ref: 'PT-199', name: 'PT-199', cat: 'puertas', desc: '', img: 'assets/cat/puertas/puertas-96.jpg' },
   { ref: 'PT-200', name: 'PT-200', cat: 'puertas', desc: '', img: 'assets/cat/puertas/puertas-97.jpg' },
   { ref: 'PT-201', name: 'PT-201', cat: 'puertas', desc: '', img: 'assets/cat/puertas/puertas-98.jpg' },
-  { ref: 'PT-202', name: 'PT-202', cat: 'puertas', desc: '', img: 'assets/cat/puertas/puertas-99.jpg' },
-  { ref: 'PT-203', name: 'PT-203', cat: 'puertas', desc: '', img: 'assets/cat/puertas/puertas-100.jpg' },
   { ref: 'PT-196', name: 'PT-196', cat: 'puertas', desc: '', img: 'assets/cat/puertas-reja/puertas-reja-24.jpg' },
   { ref: 'PT-189', name: 'PT-189', cat: 'puertas', desc: '', img: 'assets/cat/puertas/puertas-89.jpg' },
   { ref: 'PT-190', name: 'PT-190', cat: 'puertas', desc: '', img: 'assets/cat/puertas/puertas-90.jpg' },
