@@ -30,6 +30,7 @@
   .hc-navlabel { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .hc-wa-label { display: none; }
   .hc-catsticky { top: 100px; }
+  .hc-hero-content { padding-top: 168px; }
 }
 
 @media (max-width: 480px) {
