@@ -21,7 +21,7 @@ export function renderNosotrosPage() {
       <div class="hc-cathero-content">
         <span class="hc-eyebrow hc-eyebrow--inverse">Nosotros</span>
         <h1 style="max-width:720px;font-weight:900;font-size:clamp(2.2rem, 4.5vw, 3.4rem);letter-spacing:-0.03em;line-height:1.02;color:#fff">
-          No fabricamos hierro. Damos forma a espacios.
+          Soluciones metálicas para hogares, empresas e industrias.
         </h1>
       </div>
     </section>
