@@ -232,7 +232,6 @@ export const DESIGNS = [
   { ref: 'CS-107', name: 'CS-107', cat: 'casilleros', desc: '', img: 'assets/cat/casilleros/casilleros-7.jpg' },
   { ref: 'CS-108', name: 'CS-108', cat: 'casilleros', desc: '', img: 'assets/cat/casilleros/casilleros-8.jpg' },
   // Casetas y Comedores Metálicos
-  { ref: 'CM-101', name: 'CM-101', cat: 'casetas-comedores', desc: '', img: 'assets/cat/casetas-comedores/casetas-comedores-1.jpg' },
   { ref: 'CM-102', name: 'CM-102', cat: 'casetas-comedores', desc: '', img: 'assets/cat/casetas-comedores/casetas-comedores-2.jpg' },
   { ref: 'CM-103', name: 'CM-103', cat: 'casetas-comedores', desc: '', img: 'assets/cat/casetas-comedores/casetas-comedores-3.jpg' },
   { ref: 'CM-104', name: 'CM-104', cat: 'casetas-comedores', desc: '', img: 'assets/cat/casetas-comedores/casetas-comedores-4.jpg' },
