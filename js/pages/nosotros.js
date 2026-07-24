@@ -29,7 +29,7 @@ export function renderNosotrosPage() {
     <section class="hc-section" style="padding-bottom:0">
       <div style="max-width:920px;margin:0 auto;background:linear-gradient(160deg, var(--blue-950) 0%, var(--blue-900) 60%, #10162e 100%);border-radius:var(--radius-xl);padding:clamp(32px, 5vw, 60px);color:#fff;box-shadow:0 24px 60px rgba(5,15,43,0.28)">
         <span class="hc-eyebrow" style="color:var(--orange-400)">Nuestra historia</span>
-        <h2 style="margin:0 0 22px;font-weight:900;font-size:clamp(1.8rem, 3.4vw, 2.6rem);letter-spacing:-0.025em;line-height:1.08">
+        <h2 style="margin:0 0 22px;font-weight:900;font-size:clamp(1.8rem, 3.4vw, 2.6rem);letter-spacing:-0.025em;line-height:1.08;color:#fff">
           Detrás de HERRE-COL está <span style="color:var(--orange-400)">Hugo</span>.
         </h2>
         <p style="margin:0 0 20px;font-family:var(--font-display);font-weight:500;font-size:clamp(1.05rem, 1.5vw, 1.28rem);line-height:1.7;color:rgba(255,255,255,0.9)">
