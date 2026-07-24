@@ -37,7 +37,7 @@ function renderHero() {
           <span class="hc-hero-line" style="animation-delay:.3s;color:var(--orange-500)">que tu obra</span>
           <span class="hc-hero-line" style="animation-delay:.5s;color:var(--blue-700)">necesita</span>
         </h1>
-        <p class="hc-hero-lede hc-hero-rise" style="animation-delay:.75s">Tu mejor aliado en soluciones metálicas.</p>
+        <p class="hc-hero-lede hc-hero-rise" style="animation-delay:.75s">Soluciones Metalúrgicas para Hogares, Empresas e Industrias.</p>
         <div class="hc-hero-actions hc-hero-rise" style="animation-delay:.9s">
           <a class="hc-btn hc-btn--whatsapp hc-btn--lg" href="${quoteHref}" target="_blank" rel="noopener">
             ${whatsappGlyph(21, '#fff')} Cotizar por WhatsApp
