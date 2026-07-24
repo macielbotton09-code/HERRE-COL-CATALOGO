@@ -393,6 +393,7 @@
   overflow: hidden;
   background: linear-gradient(160deg, #f3f6fc 0%, #e9eef8 100%);
 }
+.hc-card-media--dark { background: linear-gradient(160deg, var(--blue-900) 0%, var(--blue-950) 100%); }
 .hc-card-img {
   width: 100%;
   height: 100%;
