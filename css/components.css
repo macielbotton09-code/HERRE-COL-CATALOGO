@@ -228,6 +228,7 @@
   line-height: 0.95;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+  color: #fff;
 }
 .hc-hero-title span { display: block; }
 .hc-hero-lede {
@@ -249,11 +250,13 @@
 }
 .hc-hero-stat { display: flex; flex-direction: column; gap: 4px; }
 .hc-hero-stat-num {
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(2rem, 4.5vw, 3.4rem);
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--orange-500);
+  font-variant-numeric: tabular-nums;
 }
 .hc-hero-stat-label {
   font-family: var(--font-display);
